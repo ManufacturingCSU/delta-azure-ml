@@ -1,7 +1,7 @@
 # delta-azure-ml
 A popular data engineering pattern is to use Azure Databricks and Delta Lake format for preparing data for analytics. Currently, there is no official support for reading this data in Azure Machine Learning. This repository highlights a proposed work-around to leverage the underlying Parquet files as a FileDataset in Azure Machine Learning.
 
-As answered in the [Delta Lake and Delta Engine guide](https://docs.microsoft.com/en-us/azure/databricks/delta/delta-faq#can-i-access-delta-tables-outside-of-databricks-runtime), in the Frequently Asked Questions section, external reads of delta tables *is possible*. However, there is a critical step for ensuring the legitimacy of the data while accessing it without being able to understand the transaction log. You can use `VACUUM` with a retention of `ZERO HOURS` to clean up any stale Parquet files that are not currently part of any table. This operations puts the Parquet files present in DBFS into a consistent state such that they can now be read by external tools.
+As answered in the FAQ section of the [Delta Lake and Delta Engine guide](https://docs.microsoft.com/en-us/azure/databricks/delta/delta-faq#can-i-access-delta-tables-outside-of-databricks-runtime), external reads of delta tables *is possible*. However, there is a critical step for ensuring the legitimacy of the data while accessing it without being able to understand the transaction log. You can use `VACUUM` with a retention of `ZERO HOURS` to clean up any stale Parquet files that are not currently part of any table. This operations puts the Parquet files present in DBFS into a consistent state such that they can now be read by external tools.
 
 ![](/images/delta-azdb-azml.png)
 
