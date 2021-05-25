@@ -14,8 +14,8 @@ As answered in the [Delta Lake and Delta Engine guide](https://docs.microsoft.co
 * [Azure Machine Learning compute instance](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-create-attach-compute-studio#compute-instance)
 * [Register ADLS Gen2 storage account as a Datastore in Azure Machine Learning workspace]()
 
-| :exclamation:  In order to ensure the validity of the data read in Azure ML, you must run `VACUUM` with a retention of `ZERO HOURS`.  |
-|---------------------------------------------------------------------------------------------------------------------------------------|
+| :exclamation: To ensure validity of Delta data, you must run `VACUUM` with a retention of `ZERO HOURS`.  |
+|----------------------------------------------------------------------------------------------------------|
 
 # Step 1: Import notebooks
 
