@@ -27,9 +27,13 @@ As answered in the [Delta Lake and Delta Engine guide](https://docs.microsoft.co
     * Container name
     * Storage account name
 
+![](images/azdb-notebook.png)
+
 2. From the Azure Machine Learning compute instance, import the notebook located here: `azureml/read-delta-data.ipynb` and fill in the following values:
 
     * Datastore name (same name as when you registered ADLS Gen2 storage account in prerequisites)
+
+![](images/azml-notebook.png)
 
 # Step 2: Create a sample Delta Table in Databricks
 
@@ -43,4 +47,3 @@ As answered in the [Delta Lake and Delta Engine guide](https://docs.microsoft.co
 
 * This notebook will walk through various sections of creating a FileDataset that points to the Parquet files stored in ADLS Gen2.
 * Before using this work-around, be sure that you run `VACUUM ` with a retention of `ZERO HOURS`.
-
